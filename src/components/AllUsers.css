@@ -1,0 +1,45 @@
+header{
+    margin: 320px 0 90px;
+    text-align: -webkit-center;
+}
+
+.divh1{
+    background-color: white;
+    width: 25%;
+}
+
+.h1Users{
+    font-size: 80px;
+    text-align: center;
+    color: #49522b;
+    font-weight: 600;
+    border-bottom: #49522b solid 2px;
+    padding: 15px;
+}    
+
+.inputUser{
+    width: 40%;
+    padding: 8px;
+    margin: 0 5% 
+}
+
+.theadUser{
+    color: white;
+    background-color: #49522b;
+    font-size: 18px;
+}
+
+.table{
+    width: 90%;
+    margin: 5%;
+}
+
+.thUsers{
+    text-align: center;
+}
+
+tbody p{
+    color: rgb(134, 31, 31);
+    padding-top: 20px;
+    font-size: 20px;
+}

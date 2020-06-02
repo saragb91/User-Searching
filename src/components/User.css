@@ -1,0 +1,12 @@
+.table-striped tbody tr{
+    transition: 0.7s;
+}
+
+.table-striped tbody tr:hover{
+    background-color: #49522b69;
+}
+
+.tdUser{
+    font-size: 18px;
+    text-align: center;
+}
