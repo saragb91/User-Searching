@@ -12,7 +12,7 @@ const AllUsers = () => {
         setSearchUser(e.target.value) 
     }
     
-    const updateList = userList.filter(u => u.name.toLowerCase().includes(searchUser.toLowerCase()) || u.email.toLowerCase().includes(searchUser.toLowerCase()) || u.address.street.toLowerCase().includes(searchUser.toLowerCase())|| u.website.toLowerCase().includes(searchUser.toLowerCase()))
+    const updateList = userList.filter(u => u.name.toLowerCase().includes(searchUser.toLowerCase()) || u.email.toLowerCase().includes(searchUser.toLowerCase()) || u.website.toLowerCase().includes(searchUser.toLowerCase()))
     
     return (
 
@@ -23,7 +23,7 @@ const AllUsers = () => {
                 </div>
             </header>
             <form>
-                <input type='text' className='inputUser' placeholder='Introduzca usuario' onChange={handleChange} value={searchUser}></input>
+                <input type='text' className='inputUser' placeholder='Introduzca nombre, email o website' onChange={handleChange} value={searchUser}></input>
             </form>
 
             <Table className='table table-striped'>
