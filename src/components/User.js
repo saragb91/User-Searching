@@ -11,8 +11,8 @@ const User = ({id,name, email, website, address}) => {
         <td className='tdUser'>{address.street} {address.zipcode} {address.city}</td>
         <td className='tdUser'>{website}</td>
       </tr>
-      </>
-     );
+    </>
+  );
 }
  
 export default User;

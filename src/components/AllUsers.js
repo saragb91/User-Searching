@@ -1,21 +1,24 @@
 import React, {useState} from 'react';
-import userList from '../user.json'
 import User from './User'
 import Table from 'react-bootstrap/Table'
 import './AllUsers.css'
 
-const AllUsers = () => {
+const AllUsers = ({users}) => {
     
-    const [searchUser, setSearchUser] = useState('')
+    const [search, setSearch] = useState('')
     
     const handleChange = e => {
-        setSearchUser(e.target.value) 
+        setSearch(e.target.value) 
     }
-    
-    const updateList = userList.filter(u => u.name.toLowerCase().includes(searchUser.toLowerCase()) || u.email.toLowerCase().includes(searchUser.toLowerCase()) || u.website.toLowerCase().includes(searchUser.toLowerCase()))
+
+    const searchTerm= search.toLowerCase()
+    const filterResult = users.filter(u => 
+        u.name.toLowerCase().includes(searchTerm) || 
+        u.website.toLowerCase().includes(searchTerm) || 
+        u.email.toLowerCase().includes(searchTerm)
+    );
     
     return (
-
         <>
             <header>
                 <div className='divh1'>
@@ -23,7 +26,7 @@ const AllUsers = () => {
                 </div>
             </header>
             <form>
-                <input type='text' className='inputUser' placeholder='Introduzca nombre, email o website' onChange={handleChange} value={searchUser}></input>
+                <input type='text' className='inputUser' placeholder='Introduzca nombre, email o website' onChange={handleChange} value={search}></input>
             </form>
 
             <Table className='table table-striped'>
@@ -39,7 +42,7 @@ const AllUsers = () => {
                 </thead>
 
                 <tbody>
-                    {updateList.length === 0 ? <p>No se han encontrado resultados</p> : updateList.map(u => (<User key={u.name} {...u} />))}
+                    {filterResult.length === 0 ? <p>No se han encontrado resultados</p> : filterResult.map(u => (<User key={u.name} {...u} />))}
                 </tbody>
                 
             </Table>
