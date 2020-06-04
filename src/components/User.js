@@ -1,5 +1,6 @@
 import React from 'react';
 import './User.css'
+import PropTypes from 'prop-types'
 
 const User = ({id,name, email, website, address}) => {
     return ( 
@@ -13,6 +14,14 @@ const User = ({id,name, email, website, address}) => {
       </tr>
     </>
   );
+}
+
+User.propTypes={
+  id:PropTypes.number.isRequired,
+  name:PropTypes.string.isRequired,
+  email:PropTypes.string.isRequired,
+  website:PropTypes.string.isRequired,
+  address:PropTypes.object.isRequired,
 }
  
 export default User;
