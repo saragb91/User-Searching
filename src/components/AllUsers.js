@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import User from './User'
 import Table from 'react-bootstrap/Table'
 import './AllUsers.css'
+import PropTypes from 'prop-types'
 
 const AllUsers = ({users}) => {
     
@@ -48,6 +49,10 @@ const AllUsers = ({users}) => {
             </Table>
         </>
      );
+}
+
+AllUsers.propTypes={
+    users:PropTypes.array.isRequired
 }
 
 export default AllUsers;
